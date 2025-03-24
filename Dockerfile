@@ -1,17 +1,9 @@
-FROM node:18-alpine
+FROM nocodb/nocodb:0.187.3
 
-# Set working directory
-WORKDIR /app
-
-# Install NocoDB
-RUN npm install -g nocodb
-
-# Expose default port
-EXPOSE 8080
-
-# Set database to SQLite
+# Set database engine (SQLite)
 ENV NC_DB=sqlite
 ENV DATABASE_URL=sqlite://data/nocodb.db
 
-# Run NocoDB
-CMD ["nocodb"]
+EXPOSE 8080
+
+CMD ["./nocodb"]
