@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: nocodb
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
